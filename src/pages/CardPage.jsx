@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-function LibraryPage() {
+function CardPage() {
     return (
         <div>
-            <Link to={"/"}>dsmdsdn</Link>
 
             <div class="fcpage-body">
 
@@ -35,6 +34,12 @@ function LibraryPage() {
                                 <li>CSS</li>
                             </ul>
                         </div>
+
+                        <h1><Link to="/">Home</Link></h1>
+
+                        <Link to={"/Library"}><h1>Library</h1></Link>
+
+                        
                     </div>
 
 
@@ -71,4 +76,4 @@ function LibraryPage() {
     );
 }
 
-export default LibraryPage;
+export default CardPage;
