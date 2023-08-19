@@ -8,6 +8,8 @@ function IndexPage() {
 
             <div class="front-body">
 
+                <Link to={"/Login"}>sdfsd</Link>
+
 
                 <div class="front-name">
 

@@ -4,11 +4,12 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
 import LibraryPage from './pages/LibraryPage.jsx';
 import CardPage from './pages/CardPage.jsx';
-
+import Login from './pages/Login.jsx';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/Card",
     element: <CardPage />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
   },
 ]);
 
