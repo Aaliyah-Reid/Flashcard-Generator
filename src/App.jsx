@@ -5,6 +5,7 @@ import './app.css';
 import { Link } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import Login from "./pages/Login";
+import LoginBlock from "./components/LoginBlock";
 
 
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <h1>LOve</h1>
+      <Link to={"/Login"}>lrkgnfekjfgndfj</Link>
       <Login />
     </div>
   )
