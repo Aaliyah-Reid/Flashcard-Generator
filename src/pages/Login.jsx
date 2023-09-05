@@ -17,7 +17,7 @@ function Login() {
     try {
      
       const { data, error } = await supabase.auth.signUp({
-        email: 'carlyonja@gmail.com',
+        email: 'aaliyahreid38@gmail.com',
         password: 'skgFYiUsbQHpVFcCvjqO'
       })
       
