@@ -6,9 +6,12 @@ function IndexPage() {
     return (
         <div>
 
-            <div class="front-body">
 
-                <Link to={"/Login"}>sdfsd</Link>
+
+          <Link to={"login"}> <button>Login/Signin</button> </Link>
+
+            <div class="front-body">
+                
 
 
                 <div class="front-name">

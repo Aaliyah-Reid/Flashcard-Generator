@@ -13,10 +13,6 @@
 
 }
 
-.fcpage-header{
-    /* width: 1000px; */
-
-}
 
 .nav-bar{
     background-color: #C8B6FB;
@@ -171,6 +167,7 @@
 
 .front-body {
     background-color: aqua;
+
     
 
 }
@@ -186,12 +183,13 @@
 }
 
 .front-upload {
-    background-color: brown;
+    background-color: yellow;
     display: inline-block;
     width: 20%;
     height: 200%;
     padding: 5%;
     margin-left: 10%;
+    margin-top: 5%;
 
 }
 

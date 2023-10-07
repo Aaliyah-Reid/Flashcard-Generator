@@ -13,8 +13,7 @@ function App() {
 
   return (
     <div>
-      <Link to={"/Login"}>lrkgnfekjfgndfj</Link>
-      <Login />
+      <IndexPage />
     </div>
   )
 }
