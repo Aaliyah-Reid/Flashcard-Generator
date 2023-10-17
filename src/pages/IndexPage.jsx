@@ -1,8 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import { useState } from "react";
 
 
 function IndexPage() {
+     
+      
+
+    const handleFileUpload = async (e) => {
+      const files = Array.from(e.target.files);
+      const fileTextArray = [];
+    
+      try {
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const fileText = await readFileAsync(file);
+          fileTextArray.push(fileText);
+        }
+    
+        console.log("All files have been processed");
+        console.log("File content:", fileTextArray);
+      } catch (error) {
+        console.error("Error. Not all files were processed:", error);
+      }
+
+
+    };
+    
+    const readFileAsync = (file) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          resolve(e.target.result);
+        };
+        reader.onerror = (e) => {
+          reject(e.target.error);
+        };
+        reader.readAsText(file);
+      });
+
+    };
+    
     return (
         <div>
 
@@ -24,18 +62,26 @@ function IndexPage() {
                 <div class="front-upload">
                     <center>
 
+                     
 
-                        <form action="/upload" method="POST" enctype="multipart/form-data">
-                            <input type="file" name="file" id="files" multiple />
-                            <button type="submit">Upload</button>
+                        <div>
+                        <input type="file" multiple onChange={handleFileUpload} />
+                         <button type="button"  >Upload</button>
 
-                        </form>
+
+
+                        </div>
+                      
+                          
 
                         <h3>or</h3>
 
                         <h3>drop file</h3>
+                    
                         <label for="textArea">Paste Text Here</label>
                         <textarea name="textArea" id="textArea"></textarea>
+
+
 
 
                     </center>
