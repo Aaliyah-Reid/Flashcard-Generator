@@ -1,45 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useState } from "react";
-
+import axios from "axios";
 
 function IndexPage() {
-     
-      
 
-    const handleFileUpload = async (e) => {
-      const files = Array.from(e.target.files);
-      const fileTextArray = [];
-    
-      try {
-        for (let i = 0; i < files.length; i++) {
-          const file = files[i];
-          const fileText = await readFileAsync(file);
-          fileTextArray.push(fileText);
-        }
-    
-        console.log("All files have been processed");
-        console.log("File content:", fileTextArray);
-      } catch (error) {
-        console.error("Error. Not all files were processed:", error);
+
+  const handleFileUpload = async (e) => {
+    const files = Array.from(e.target.files);
+
+    try {
+      const formData = new FormData();
+      for (let i = 0; i < files.length; i++) {
+        formData.append("files", files[i]);
       }
 
-
-    };
-    
-    const readFileAsync = (file) => {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          resolve(e.target.result);
-        };
-        reader.onerror = (e) => {
-          reject(e.target.error);
-        };
-        reader.readAsText(file);
+      const response = await axios.post("http://127.0.0.1:5173/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
-    };
+      console.log("Files uploaded successfully:", response.data);
+    } catch (error) {
+      console.error("Error uploading files:", error);
+    }
+  };
+  
     
     return (
         <div>
